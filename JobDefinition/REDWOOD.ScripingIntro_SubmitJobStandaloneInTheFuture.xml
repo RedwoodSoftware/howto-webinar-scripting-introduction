@@ -1,0 +1,58 @@
+<?xml version='1.0'?>
+<JobDefinition>
+  <Comment />
+  <Description>Submit a Sleep job as a Standalone job in the future</Description>
+  <Name>ScripingIntro_SubmitJobStandaloneInTheFuture</Name>
+  <Partition type="Partition" path="REDWOOD" />
+  <ParentApplication type="Application" path="REDWOOD.Webinars.REDWOOD.Scripting Introduction.$2" />
+  <EquivalentObject>false</EquivalentObject>
+  <CriticalProcess>false</CriticalProcess>
+  <KeepForce>false</KeepForce>
+  <KeepAmount />
+  <KeepUnits />
+  <KeepType />
+  <KeepJobsInStatus />
+  <MinimumOpenDurationExpression />
+  <Overdue>false</Overdue>
+  <OverdueStatus />
+  <OverviewFormat />
+  <Priority />
+  <MaxPriority>100</MaxPriority>
+  <RestartCount />
+  <ReturncodeMapToCompleted />
+  <HoldOnSubmit>false</HoldOnSubmit>
+  <TopLevel>true</TopLevel>
+  <Template>false</Template>
+  <Maintenance>false</Maintenance>
+  <ReactionJobType />
+  <EvaluationOwnerType>SystemDefault</EvaluationOwnerType>
+  <CompletionStrategy>Default</CompletionStrategy>
+  <OverdueEventDefinition />
+  <DefaultOutputFormat />
+  <JobDefinitionType type="JobDefinitionType" path="GLOBAL.RedwoodScript" />
+  <DefaultLogFormat />
+  <DefaultQueue type="Queue" path="GLOBAL.System" />
+  <Resource />
+  <TimeWindow />
+  <TimeWindowTimeZone />
+  <JobTimeZone />
+  <ActionSubject />
+  <Script>
+    <Source><![CDATA[{
+  JobDefinition jobDefinition = jcsSession.getJobDefinitionByName("System_Sleep");
+  Job aJob = jobDefinition.prepare();
+  JobParameter jp = aJob.getJobParameterByName("MilliSeconds");
+  jp.setInValueNumber(new BigDecimal(60000));
+  // set standalone
+  aJob.setParentJob(null);
+  aJob.setDescription("Submitted as a Standalone Job from " + jcsJob.getJobId());
+  // submit in the System_Maintenance queue
+  aJob.setQueue(jcsSession.getQueueByName("System_Maintenance"));
+  aJob.setRequestedStartTime(DateTimeZone.expressionNow("add 1 hour"));
+  jcsSession.persist();
+}]]></Source>
+    <RunAsUser />
+    <RemoteRunAsUser />
+    <Library type="Library" path="GLOBAL.None" />
+  </Script>
+</JobDefinition>

@@ -1,0 +1,54 @@
+<?xml version='1.0'?>
+<JobDefinition>
+  <Comment />
+  <Description>Submit a Sleep job as a child and wait for the end state</Description>
+  <Name>ScripingIntro_SubmitJobAndWaitForChildren</Name>
+  <Partition type="Partition" path="REDWOOD" />
+  <ParentApplication type="Application" path="REDWOOD.Webinars.REDWOOD.Scripting Introduction.$2" />
+  <EquivalentObject>false</EquivalentObject>
+  <CriticalProcess>false</CriticalProcess>
+  <KeepForce>false</KeepForce>
+  <KeepAmount />
+  <KeepUnits />
+  <KeepType />
+  <KeepJobsInStatus />
+  <MinimumOpenDurationExpression />
+  <Overdue>false</Overdue>
+  <OverdueStatus />
+  <OverviewFormat />
+  <Priority />
+  <MaxPriority>100</MaxPriority>
+  <RestartCount />
+  <ReturncodeMapToCompleted />
+  <HoldOnSubmit>false</HoldOnSubmit>
+  <TopLevel>true</TopLevel>
+  <Template>false</Template>
+  <Maintenance>false</Maintenance>
+  <ReactionJobType />
+  <EvaluationOwnerType>SystemDefault</EvaluationOwnerType>
+  <CompletionStrategy>Default</CompletionStrategy>
+  <OverdueEventDefinition />
+  <DefaultOutputFormat />
+  <JobDefinitionType type="JobDefinitionType" path="GLOBAL.RedwoodScript" />
+  <DefaultLogFormat />
+  <DefaultQueue type="Queue" path="GLOBAL.System" />
+  <Resource />
+  <TimeWindow />
+  <TimeWindowTimeZone />
+  <JobTimeZone />
+  <ActionSubject />
+  <Script>
+    <Source><![CDATA[{
+  JobDefinition jobDefinition = jcsSession.getJobDefinitionByName("System_Sleep");
+  Job aJob = jobDefinition.prepare();
+  JobParameter jp = aJob.getJobParameterByName("MilliSeconds");
+  jp.setInValueNumber(new BigDecimal(-1));
+  jcsSession.persist();
+  jcsJobContext.setCompletionStrategy(CompletionStrategyType.ExternalWaitForChildJobs);
+  jcsSession.persist();
+}]]></Source>
+    <RunAsUser />
+    <RemoteRunAsUser />
+    <Library type="Library" path="GLOBAL.None" />
+  </Script>
+</JobDefinition>

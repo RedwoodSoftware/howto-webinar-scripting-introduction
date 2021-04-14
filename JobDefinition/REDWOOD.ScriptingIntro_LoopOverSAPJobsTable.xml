@@ -1,0 +1,464 @@
+<?xml version='1.0'?>
+<JobDefinition>
+  <Comment />
+  <Description>Loop over a table with SAP jobs</Description>
+  <Name>ScriptingIntro_LoopOverSAPJobsTable</Name>
+  <Partition type="Partition" path="REDWOOD" />
+  <ParentApplication type="Application" path="REDWOOD.Webinars.REDWOOD.Scripting Introduction.$2" />
+  <EquivalentObject>false</EquivalentObject>
+  <CriticalProcess>false</CriticalProcess>
+  <KeepForce>false</KeepForce>
+  <KeepAmount />
+  <KeepUnits />
+  <KeepType />
+  <KeepJobsInStatus />
+  <MinimumOpenDurationExpression />
+  <Overdue>false</Overdue>
+  <OverdueStatus />
+  <OverviewFormat />
+  <Priority />
+  <MaxPriority>100</MaxPriority>
+  <RestartCount />
+  <ReturncodeMapToCompleted />
+  <HoldOnSubmit>false</HoldOnSubmit>
+  <TopLevel>true</TopLevel>
+  <Template>false</Template>
+  <Maintenance>false</Maintenance>
+  <ReactionJobType />
+  <EvaluationOwnerType>SystemDefault</EvaluationOwnerType>
+  <CompletionStrategy>Default</CompletionStrategy>
+  <OverdueEventDefinition />
+  <DefaultOutputFormat />
+  <JobDefinitionType type="JobDefinitionType" path="GLOBAL.JobChain" />
+  <DefaultLogFormat />
+  <DefaultQueue />
+  <Resource />
+  <TimeWindow />
+  <TimeWindowTimeZone />
+  <JobTimeZone />
+  <ActionSubject />
+  <JobDefinitionParameter>
+    <Comment />
+    <Description>SAP System</Description>
+    <Name>SAP_SYSTEMS</Name>
+    <DataLength />
+    <DataPrecision />
+    <DataScale />
+    <DataType>String</DataType>
+    <DefaultExpression />
+    <DefaultValueEditable />
+    <Direction>In</Direction>
+    <SimpleConstraintType>None</SimpleConstraintType>
+    <SimpleConstraintData />
+    <SimpleConstraintMessage />
+    <SimpleConstraintOptional>false</SimpleConstraintOptional>
+    <SimpleConstraintSort>Ascending</SimpleConstraintSort>
+    <Display>true</Display>
+    <Password>false</Password>
+    <DisplayOrder>2</DisplayOrder>
+    <Editable>Always</Editable>
+    <GroupName />
+    <PartOfKey>true</PartOfKey>
+    <Nullable>true</Nullable>
+    <Runtime>false</Runtime>
+    <JobFormat />
+    <Array>false</Array>
+    <ArrayMinLength>0</ArrayMinLength>
+    <ArrayMaxLength />
+    <ArrayDuplicateValuesAllowed>false</ArrayDuplicateValuesAllowed>
+    <ArraySorted>false</ArraySorted>
+    <ParameterMappingType>Normal</ParameterMappingType>
+    <JobDefinitionParameterSubType />
+  </JobDefinitionParameter>
+  <JobDefinitionParameter>
+    <Comment />
+    <Description>SAP Client</Description>
+    <Name>CLIENT</Name>
+    <DataLength />
+    <DataPrecision />
+    <DataScale />
+    <DataType>String</DataType>
+    <DefaultExpression />
+    <DefaultValueEditable />
+    <Direction>In</Direction>
+    <SimpleConstraintType>None</SimpleConstraintType>
+    <SimpleConstraintData />
+    <SimpleConstraintMessage />
+    <SimpleConstraintOptional>false</SimpleConstraintOptional>
+    <SimpleConstraintSort>Ascending</SimpleConstraintSort>
+    <Display>true</Display>
+    <Password>false</Password>
+    <DisplayOrder>3</DisplayOrder>
+    <Editable>Always</Editable>
+    <GroupName />
+    <PartOfKey>true</PartOfKey>
+    <Nullable>true</Nullable>
+    <Runtime>false</Runtime>
+    <JobFormat />
+    <Array>false</Array>
+    <ArrayMinLength>0</ArrayMinLength>
+    <ArrayMaxLength />
+    <ArrayDuplicateValuesAllowed>false</ArrayDuplicateValuesAllowed>
+    <ArraySorted>false</ArraySorted>
+    <ParameterMappingType>Normal</ParameterMappingType>
+    <JobDefinitionParameterSubType />
+  </JobDefinitionParameter>
+  <JobChain>
+    <RestartCount />
+    <RequestRestartByDefault>false</RequestRestartByDefault>
+    <RestartDelayAmount>0</RestartDelayAmount>
+    <RestartDelayUnits>Minutes</RestartDelayUnits>
+    <JobChainStep>
+      <Comment />
+      <Description>Step 1</Description>
+      <Name>Step 1</Name>
+      <RestartCount />
+      <RestartDelayAmount>0</RestartDelayAmount>
+      <RestartDelayUnits>Minutes</RestartDelayUnits>
+      <SequenceNumber>1</SequenceNumber>
+      <JobChainCall>
+        <Description>Loop Driver 1</Description>
+        <SequenceNumber>1</SequenceNumber>
+        <IgnoreStatus>false</IgnoreStatus>
+        <StepWaitingOnJob>true</StepWaitingOnJob>
+        <JobDefinition>
+          <Comment />
+          <Description>ScriptingIntro_LoopOverSAPJobsTable 1</Description>
+          <Name>System_Internal_Chain22949555</Name>
+          <Partition type="Partition" path="REDWOOD" />
+          <ParentApplication type="Application" path="REDWOOD.Webinars.REDWOOD.Scripting Introduction.$2" />
+          <EquivalentObject>false</EquivalentObject>
+          <CriticalProcess>false</CriticalProcess>
+          <KeepForce>false</KeepForce>
+          <KeepAmount />
+          <KeepUnits />
+          <KeepType />
+          <KeepJobsInStatus />
+          <MinimumOpenDurationExpression />
+          <Overdue>false</Overdue>
+          <OverdueStatus />
+          <OverviewFormat />
+          <Priority />
+          <MaxPriority>100</MaxPriority>
+          <RestartCount />
+          <ReturncodeMapToCompleted />
+          <HoldOnSubmit>false</HoldOnSubmit>
+          <TopLevel>false</TopLevel>
+          <Template>false</Template>
+          <Maintenance>false</Maintenance>
+          <ReactionJobType />
+          <EvaluationOwnerType>SystemDefault</EvaluationOwnerType>
+          <CompletionStrategy>Default</CompletionStrategy>
+          <OverdueEventDefinition />
+          <DefaultOutputFormat />
+          <JobDefinitionType type="JobDefinitionType" path="GLOBAL.RedwoodScript" />
+          <DefaultLogFormat />
+          <DefaultQueue />
+          <Resource />
+          <TimeWindow />
+          <TimeWindowTimeZone />
+          <JobTimeZone />
+          <ActionSubject />
+          <JobDefinitionParameter>
+            <Comment />
+            <Description />
+            <Name>jobname</Name>
+            <DataLength />
+            <DataPrecision />
+            <DataScale />
+            <DataType>String</DataType>
+            <DefaultExpression />
+            <DefaultValueEditable />
+            <Direction>In</Direction>
+            <SimpleConstraintType>None</SimpleConstraintType>
+            <SimpleConstraintData />
+            <SimpleConstraintMessage />
+            <SimpleConstraintOptional>false</SimpleConstraintOptional>
+            <SimpleConstraintSort>Ascending</SimpleConstraintSort>
+            <Display>true</Display>
+            <Password>false</Password>
+            <DisplayOrder>0</DisplayOrder>
+            <Editable>Always</Editable>
+            <GroupName />
+            <PartOfKey>false</PartOfKey>
+            <Nullable>true</Nullable>
+            <Runtime>false</Runtime>
+            <JobFormat />
+            <Array>false</Array>
+            <ArrayMinLength>0</ArrayMinLength>
+            <ArrayMaxLength />
+            <ArrayDuplicateValuesAllowed>false</ArrayDuplicateValuesAllowed>
+            <ArraySorted>false</ArraySorted>
+            <ParameterMappingType>Normal</ParameterMappingType>
+            <JobDefinitionParameterSubType />
+          </JobDefinitionParameter>
+          <JobDefinitionParameter>
+            <Comment />
+            <Description />
+            <Name>tableParameter</Name>
+            <DataLength />
+            <DataPrecision />
+            <DataScale />
+            <DataType>Table</DataType>
+            <DefaultExpression><![CDATA[Table:REDWOOD.ScriptingIntro_LoopOverSAPJobs]]></DefaultExpression>
+            <DefaultValueEditable />
+            <Direction>In</Direction>
+            <SimpleConstraintType>None</SimpleConstraintType>
+            <SimpleConstraintData />
+            <SimpleConstraintMessage />
+            <SimpleConstraintOptional>false</SimpleConstraintOptional>
+            <SimpleConstraintSort>Ascending</SimpleConstraintSort>
+            <Display>true</Display>
+            <Password>false</Password>
+            <DisplayOrder>1</DisplayOrder>
+            <Editable>Always</Editable>
+            <GroupName />
+            <PartOfKey>false</PartOfKey>
+            <Nullable>true</Nullable>
+            <Runtime>false</Runtime>
+            <JobFormat />
+            <Array>false</Array>
+            <ArrayMinLength>0</ArrayMinLength>
+            <ArrayMaxLength />
+            <ArrayDuplicateValuesAllowed>false</ArrayDuplicateValuesAllowed>
+            <ArraySorted>false</ArraySorted>
+            <ParameterMappingType>Normal</ParameterMappingType>
+            <JobDefinitionParameterSubType />
+          </JobDefinitionParameter>
+          <Script>
+            <Source><![CDATA[import com.redwood.scheduler.api.rtx.*;
+{
+  try (RTXReader reader = tableParameter.getRTXReader())
+  {
+    jcsJobContext.loopOverNextJobChainStep(jcsSession, reader, (row -> jobname.equals(row.getString("jobname")))
+                                      , "'Execute SAP Job ' + columns.jobname + '_' + columns.$key + ' abap ' + columns.abap + '/' + columns.variant");
+  }
+  jcsSession.persist();
+}]]></Source>
+            <RunAsUser />
+            <RemoteRunAsUser />
+            <Library type="Library" path="GLOBAL.None" />
+          </Script>
+        </JobDefinition>
+        <JobChainCallInExpressionParameter>
+          <LocalJobDefinitionParameter type="JobDefinitionParameter" path="REDWOOD.System_Internal_Chain22949555.jobname" />
+          <Expression><![CDATA[demo1]]></Expression>
+        </JobChainCallInExpressionParameter>
+      </JobChainCall>
+    </JobChainStep>
+    <JobChainStep>
+      <Comment />
+      <Description>Step 2</Description>
+      <Name>Step 2</Name>
+      <RestartCount />
+      <RestartDelayAmount>0</RestartDelayAmount>
+      <RestartDelayUnits>Minutes</RestartDelayUnits>
+      <SequenceNumber>2</SequenceNumber>
+      <JobChainCall>
+        <Description>Loop over demo 2</Description>
+        <SequenceNumber>1</SequenceNumber>
+        <IgnoreStatus>false</IgnoreStatus>
+        <StepWaitingOnJob>true</StepWaitingOnJob>
+        <JobDefinition type="JobDefinition" path="GLOBAL.SAP_AbapRun" />
+        <JobChainCallInExpressionParameter>
+          <LocalJobDefinitionParameter type="JobDefinitionParameter" path="GLOBAL.SAP_AbapRun.ABAP_PROGRAM_NAME" />
+          <Expression><![CDATA[=Loop.getString('abap')]]></Expression>
+        </JobChainCallInExpressionParameter>
+        <JobChainCallInExpressionParameter>
+          <LocalJobDefinitionParameter type="JobDefinitionParameter" path="GLOBAL.SAP_AbapRun.ABAP_VARIANT_NAME" />
+          <Expression><![CDATA[=Loop.getString('variant')]]></Expression>
+        </JobChainCallInExpressionParameter>
+        <JobChainCallInExpressionParameter>
+          <LocalJobDefinitionParameter type="JobDefinitionParameter" path="GLOBAL.SAP_AbapRun.JOBNAME" />
+          <Expression><![CDATA[=Loop.getString('jobname') + '_' + jobId]]></Expression>
+        </JobChainCallInExpressionParameter>
+        <JobChainCallInReferenceParameter>
+          <LocalJobDefinitionParameter type="JobDefinitionParameter" path="GLOBAL.SAP_AbapRun.SAP_SYSTEMS" />
+          <SourceJobChainCall />
+          <SourceJobDefinitionParameter type="JobDefinitionParameter" path="REDWOOD.ScriptingIntro_LoopOverSAPJobsTable.SAP_SYSTEMS" />
+        </JobChainCallInReferenceParameter>
+        <JobChainCallInReferenceParameter>
+          <LocalJobDefinitionParameter type="JobDefinitionParameter" path="GLOBAL.SAP_AbapRun.CLIENT" />
+          <SourceJobChainCall />
+          <SourceJobDefinitionParameter type="JobDefinitionParameter" path="REDWOOD.ScriptingIntro_LoopOverSAPJobsTable.CLIENT" />
+        </JobChainCallInReferenceParameter>
+      </JobChainCall>
+    </JobChainStep>
+    <JobChainStep>
+      <Comment />
+      <Description>Step 3</Description>
+      <Name>Step 3</Name>
+      <RestartCount />
+      <RestartDelayAmount>0</RestartDelayAmount>
+      <RestartDelayUnits>Minutes</RestartDelayUnits>
+      <SequenceNumber>3</SequenceNumber>
+      <JobChainCall>
+        <Description>Loop Driver 2</Description>
+        <SequenceNumber>1</SequenceNumber>
+        <IgnoreStatus>false</IgnoreStatus>
+        <StepWaitingOnJob>true</StepWaitingOnJob>
+        <JobDefinition>
+          <Comment />
+          <Description>ScriptingIntro_LoopOverSAPJobsTable 2</Description>
+          <Name>System_Internal_Chain22950217</Name>
+          <Partition type="Partition" path="REDWOOD" />
+          <ParentApplication type="Application" path="REDWOOD.Webinars.REDWOOD.Scripting Introduction.$2" />
+          <EquivalentObject>false</EquivalentObject>
+          <CriticalProcess>false</CriticalProcess>
+          <KeepForce>false</KeepForce>
+          <KeepAmount />
+          <KeepUnits />
+          <KeepType />
+          <KeepJobsInStatus />
+          <MinimumOpenDurationExpression />
+          <Overdue>false</Overdue>
+          <OverdueStatus />
+          <OverviewFormat />
+          <Priority />
+          <MaxPriority>100</MaxPriority>
+          <RestartCount />
+          <ReturncodeMapToCompleted />
+          <HoldOnSubmit>false</HoldOnSubmit>
+          <TopLevel>false</TopLevel>
+          <Template>false</Template>
+          <Maintenance>false</Maintenance>
+          <ReactionJobType />
+          <EvaluationOwnerType>SystemDefault</EvaluationOwnerType>
+          <CompletionStrategy>Default</CompletionStrategy>
+          <OverdueEventDefinition />
+          <DefaultOutputFormat />
+          <JobDefinitionType type="JobDefinitionType" path="GLOBAL.RedwoodScript" />
+          <DefaultLogFormat />
+          <DefaultQueue />
+          <Resource />
+          <TimeWindow />
+          <TimeWindowTimeZone />
+          <JobTimeZone />
+          <ActionSubject />
+          <JobDefinitionParameter>
+            <Comment />
+            <Description />
+            <Name>jobname</Name>
+            <DataLength />
+            <DataPrecision />
+            <DataScale />
+            <DataType>String</DataType>
+            <DefaultExpression />
+            <DefaultValueEditable />
+            <Direction>In</Direction>
+            <SimpleConstraintType>None</SimpleConstraintType>
+            <SimpleConstraintData />
+            <SimpleConstraintMessage />
+            <SimpleConstraintOptional>false</SimpleConstraintOptional>
+            <SimpleConstraintSort>Ascending</SimpleConstraintSort>
+            <Display>true</Display>
+            <Password>false</Password>
+            <DisplayOrder>0</DisplayOrder>
+            <Editable>Always</Editable>
+            <GroupName />
+            <PartOfKey>false</PartOfKey>
+            <Nullable>true</Nullable>
+            <Runtime>false</Runtime>
+            <JobFormat />
+            <Array>false</Array>
+            <ArrayMinLength>0</ArrayMinLength>
+            <ArrayMaxLength />
+            <ArrayDuplicateValuesAllowed>false</ArrayDuplicateValuesAllowed>
+            <ArraySorted>false</ArraySorted>
+            <ParameterMappingType>Normal</ParameterMappingType>
+            <JobDefinitionParameterSubType />
+          </JobDefinitionParameter>
+          <JobDefinitionParameter>
+            <Comment />
+            <Description />
+            <Name>tableParameter</Name>
+            <DataLength />
+            <DataPrecision />
+            <DataScale />
+            <DataType>Table</DataType>
+            <DefaultExpression><![CDATA[Table:REDWOOD.ScriptingIntro_LoopOverSAPJobs]]></DefaultExpression>
+            <DefaultValueEditable />
+            <Direction>In</Direction>
+            <SimpleConstraintType>None</SimpleConstraintType>
+            <SimpleConstraintData />
+            <SimpleConstraintMessage />
+            <SimpleConstraintOptional>false</SimpleConstraintOptional>
+            <SimpleConstraintSort>Ascending</SimpleConstraintSort>
+            <Display>true</Display>
+            <Password>false</Password>
+            <DisplayOrder>1</DisplayOrder>
+            <Editable>Always</Editable>
+            <GroupName />
+            <PartOfKey>false</PartOfKey>
+            <Nullable>true</Nullable>
+            <Runtime>false</Runtime>
+            <JobFormat />
+            <Array>false</Array>
+            <ArrayMinLength>0</ArrayMinLength>
+            <ArrayMaxLength />
+            <ArrayDuplicateValuesAllowed>false</ArrayDuplicateValuesAllowed>
+            <ArraySorted>false</ArraySorted>
+            <ParameterMappingType>Normal</ParameterMappingType>
+            <JobDefinitionParameterSubType />
+          </JobDefinitionParameter>
+          <Script>
+            <Source><![CDATA[import com.redwood.scheduler.api.rtx.*;
+{
+  try (RTXReader reader = tableParameter.getRTXReader())
+  {
+    jcsJobContext.loopOverNextJobChainStep(jcsSession, reader, (row -> jobname.equals(row.getString("jobname")))
+                                      , "'Execute SAP Job ' + columns.jobname + '_' + columns.$key + ' abap ' + columns.abap + '/' + columns.variant");
+  }
+  jcsSession.persist();
+}]]></Source>
+            <RunAsUser />
+            <RemoteRunAsUser />
+            <Library type="Library" path="GLOBAL.None" />
+          </Script>
+        </JobDefinition>
+        <JobChainCallInExpressionParameter>
+          <LocalJobDefinitionParameter type="JobDefinitionParameter" path="REDWOOD.System_Internal_Chain22950217.jobname" />
+          <Expression><![CDATA[demo2]]></Expression>
+        </JobChainCallInExpressionParameter>
+      </JobChainCall>
+    </JobChainStep>
+    <JobChainStep>
+      <Comment />
+      <Description>Step 4</Description>
+      <Name>Step 4</Name>
+      <RestartCount />
+      <RestartDelayAmount>0</RestartDelayAmount>
+      <RestartDelayUnits>Minutes</RestartDelayUnits>
+      <SequenceNumber>4</SequenceNumber>
+      <JobChainCall>
+        <Description>Loop over demo 2</Description>
+        <SequenceNumber>1</SequenceNumber>
+        <IgnoreStatus>false</IgnoreStatus>
+        <StepWaitingOnJob>true</StepWaitingOnJob>
+        <JobDefinition type="JobDefinition" path="GLOBAL.SAP_AbapRun" />
+        <JobChainCallInExpressionParameter>
+          <LocalJobDefinitionParameter type="JobDefinitionParameter" path="GLOBAL.SAP_AbapRun.ABAP_PROGRAM_NAME" />
+          <Expression><![CDATA[=Loop.getString('abap')]]></Expression>
+        </JobChainCallInExpressionParameter>
+        <JobChainCallInExpressionParameter>
+          <LocalJobDefinitionParameter type="JobDefinitionParameter" path="GLOBAL.SAP_AbapRun.ABAP_VARIANT_NAME" />
+          <Expression><![CDATA[=Loop.getString('variant')]]></Expression>
+        </JobChainCallInExpressionParameter>
+        <JobChainCallInExpressionParameter>
+          <LocalJobDefinitionParameter type="JobDefinitionParameter" path="GLOBAL.SAP_AbapRun.JOBNAME" />
+          <Expression><![CDATA[=Loop.getString('jobname') + '_' + jobId]]></Expression>
+        </JobChainCallInExpressionParameter>
+        <JobChainCallInReferenceParameter>
+          <LocalJobDefinitionParameter type="JobDefinitionParameter" path="GLOBAL.SAP_AbapRun.SAP_SYSTEMS" />
+          <SourceJobChainCall />
+          <SourceJobDefinitionParameter type="JobDefinitionParameter" path="REDWOOD.ScriptingIntro_LoopOverSAPJobsTable.SAP_SYSTEMS" />
+        </JobChainCallInReferenceParameter>
+        <JobChainCallInReferenceParameter>
+          <LocalJobDefinitionParameter type="JobDefinitionParameter" path="GLOBAL.SAP_AbapRun.CLIENT" />
+          <SourceJobChainCall />
+          <SourceJobDefinitionParameter type="JobDefinitionParameter" path="REDWOOD.ScriptingIntro_LoopOverSAPJobsTable.CLIENT" />
+        </JobChainCallInReferenceParameter>
+      </JobChainCall>
+    </JobChainStep>
+  </JobChain>
+</JobDefinition>

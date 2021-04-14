@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<Table>
+  <Comment />
+  <Description>Example Table to demo looping over table entries</Description>
+  <Name>ScriptingIntro_LoopOverTable</Name>
+  <Partition type="Partition" path="REDWOOD" />
+  <ParentApplication type="Application" path="REDWOOD.Webinars.REDWOOD.Scripting Introduction.$2" />
+  <ImportMode>ImportRows</ImportMode>
+  <InMemory>false</InMemory>
+  <TableDefinition type="TableDefinition" path="REDWOOD.TableLoopTableDefinition" />
+  <TableValue>
+    <Key>1</Key>
+    <SearchKey>1</SearchKey>
+    <ColumnName>value</ColumnName>
+    <ColumnValue><![CDATA[entry 1]]></ColumnValue>
+  </TableValue>
+  <TableValue>
+    <Key>2</Key>
+    <SearchKey>2</SearchKey>
+    <ColumnName>value</ColumnName>
+    <ColumnValue><![CDATA[entry 2]]></ColumnValue>
+  </TableValue>
+  <TableValue>
+    <Key>3</Key>
+    <SearchKey>3</SearchKey>
+    <ColumnName>value</ColumnName>
+    <ColumnValue><![CDATA[entry 3]]></ColumnValue>
+  </TableValue>
+</Table>

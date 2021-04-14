@@ -1,0 +1,59 @@
+<?xml version='1.0'?>
+<TableDefinition>
+  <Comment />
+  <Description>Table Definition to demo looping over a table of SAP jobs</Description>
+  <Name>SAPLoopTableDefinition</Name>
+  <Partition type="Partition" path="REDWOOD" />
+  <ParentApplication type="Application" path="REDWOOD.Webinars.REDWOOD.Scripting Introduction.$2" />
+  <TableDefinitionColumn>
+    <DisplayOrder>1</DisplayOrder>
+    <ColumnName>jobname</ColumnName>
+    <SearchColumnName>JOBNAME</SearchColumnName>
+    <Nullable>false</Nullable>
+    <DataType>String</DataType>
+    <Comment />
+    <Description />
+    <DefaultValue />
+    <Password>false</Password>
+    <DataLength />
+    <SimpleConstraintType>None</SimpleConstraintType>
+    <SimpleConstraintData />
+    <SimpleConstraintMessage />
+    <SimpleConstraintOptional>false</SimpleConstraintOptional>
+    <SimpleConstraintSort>Ascending</SimpleConstraintSort>
+  </TableDefinitionColumn>
+  <TableDefinitionColumn>
+    <DisplayOrder>2</DisplayOrder>
+    <ColumnName>abap</ColumnName>
+    <SearchColumnName>ABAP</SearchColumnName>
+    <Nullable>false</Nullable>
+    <DataType>String</DataType>
+    <Comment />
+    <Description />
+    <DefaultValue />
+    <Password>false</Password>
+    <DataLength />
+    <SimpleConstraintType>None</SimpleConstraintType>
+    <SimpleConstraintData />
+    <SimpleConstraintMessage />
+    <SimpleConstraintOptional>false</SimpleConstraintOptional>
+    <SimpleConstraintSort>Ascending</SimpleConstraintSort>
+  </TableDefinitionColumn>
+  <TableDefinitionColumn>
+    <DisplayOrder>3</DisplayOrder>
+    <ColumnName>variant</ColumnName>
+    <SearchColumnName>VARIANT</SearchColumnName>
+    <Nullable>true</Nullable>
+    <DataType>String</DataType>
+    <Comment />
+    <Description />
+    <DefaultValue />
+    <Password>false</Password>
+    <DataLength />
+    <SimpleConstraintType>None</SimpleConstraintType>
+    <SimpleConstraintData />
+    <SimpleConstraintMessage />
+    <SimpleConstraintOptional>false</SimpleConstraintOptional>
+    <SimpleConstraintSort>Ascending</SimpleConstraintSort>
+  </TableDefinitionColumn>
+</TableDefinition>
